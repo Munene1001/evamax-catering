@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Evamax Catering Services – Meru, Kenya</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --orange:#E07B1A;
+  --orange-light:#FFF0DC;
+  --orange-dark:#A05510;
+  --green:#1D5C28;
+  --green-light:#E8F5E9;
+  --green-dark:#0F3516;
+  --cream:#FFFBF2;
+  --brown:#3D1800;
+  --gray:#6B6B6B;
+  --border:#E8D9C0;
+  --white:#FFFFFF;
+  --shadow:0 4px 20px rgba(61,24,0,0.10);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Nunito',sans-serif;background:var(--cream);color:var(--brown);line-height:1.6;}
+a{text-decoration:none;color:inherit;}
+img{max-width:100%;}
+
+/* ── NAV WITH BRAND LOGO ── */
+nav{background:var(--green);position:sticky;top:0;z-index:100;box-shadow:0 2px 12px rgba(0,0,0,0.2);}
+.nav-inner{max-width:1100px;margin:0 auto;padding:0 1.5rem;display:flex;align-items:center;justify-content:space-between;height:80px;}
+
+/* Custom Brand Logo Container */
+.brand-logo {
+  display: flex;
+  align-items: center;
+  background: var(--white);
+  padding: 6px 16px;
+  border-radius: 40px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  border: 2px solid var(--border);
+  height: 62px;
+}
+.logo-emblem {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+/* Crossed Spoon and Fork House Symbolism */
+.emblem-roof {
+  width: 0;
+  height: 0;
+  border-left: 14px solid transparent;
+  border-right: 14px solid transparent;
+  border-bottom: 10px solid #A30000;
+  position: relative;
+  margin-bottom: 1px;
+}
+.emblem-roof::before, .emblem-roof::after {
+  content: '';
+  position: absolute;
+  background: #A30000;
+  width: 4px;
+  height: 22px;
+  top: -6px;
+}
+.emblem-roof::before { transform: rotate(45deg); left: -10px; }
+.emblem-roof::after { transform: rotate(-45deg); right: -10px; }
+.emblem-house {
+  width: 20px;
+  height: 14px;
+  border: 3px solid #A30000;
+  border-top: none;
+  background: transparent;
+  position: relative;
+}
+.emblem-window {
+  width: 6px;
+  height: 6px;
+  background: #A30000;
+  margin: 1px auto 0;
+}
+.logo-text-area {
+  display: flex;
+  flex-direction: column;
+}
+.brand-title {
+  font-family: 'Playfair Display', serif;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: #A30000;
+  text-transform: uppercase;
+  line-height: 1.1;
+  letter-spacing: -0.2px;
+}
+.brand-subtitle {
+  font-family: 'Nunito', sans-serif;
+  font-weight: 700;
+  font-size: 0.68rem;
+  color: var(--green-dark);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.nav-links{display:flex;gap:1.8rem;list-style:none;}
+.nav-links a{color:#C8F0CB;font-size:0.92rem;font-weight:600;transition:color .2s;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{background:var(--orange);color:#fff;padding:9px 20px;border-radius:25px;font-weight:700;font-size:0.9rem;transition:background .2s;}
+.nav-cta:hover{background:var(--orange-dark);}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px;}
+.hamburger span{width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s;}
+
+/* ── HERO GRAPHICS ── */
+.hero{background:linear-gradient(135deg,rgba(15,53,22,0.92) 0%,rgba(29,92,40,0.85) 100%), url('https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=1600') center/cover no-repeat fixed;min-height:85vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:4rem 1.5rem;position:relative;overflow:hidden;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);color:#C8F0CB;padding:6px 18px;border-radius:20px;font-size:0.82rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-bottom:1.2rem;}
+.hero h1{font-family:'Playfair Display',serif;font-size:clamp(2.2rem,6vw,4.2rem);color:#fff;line-height:1.15;margin-bottom:0.6rem;}
+.hero h1 span{color:#FAC75A;font-style:italic;}
+.hero-sub{color:#E8F5E9;font-size:1.1rem;max-width:520px;margin:0 auto 2rem;}
+.hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.btn-primary{background:var(--orange);color:#fff;padding:14px 32px;border-radius:30px;font-weight:700;font-size:1rem;transition:.2s;display:inline-block;}
+.btn-primary:hover{background:var(--orange-dark);transform:translateY(-1px);}
+.btn-outline{background:transparent;color:#fff;border:2px solid rgba(255,255,255,0.6);padding:14px 28px;border-radius:30px;font-weight:700;font-size:1rem;transition:.2s;display:inline-block;}
+.btn-outline:hover{background:rgba(255,255,255,0.12);}
+.hero-chips{margin-top:2.5rem;display:flex;gap:.7rem;justify-content:center;flex-wrap:wrap;}
+.chip{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);color:#E0F5E2;padding:6px 16px;border-radius:20px;font-size:0.82rem;font-weight:600;}
+.scroll-hint{position:absolute;bottom:28px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,0.5);font-size:0.8rem;text-align:center;}
+.scroll-arrow{display:block;margin:4px auto 0;width:18px;height:18px;border-right:2px solid rgba(255,255,255,0.4);border-bottom:2px solid rgba(255,255,255,0.4);transform:rotate(45deg);}
+
+/* ── SECTIONS ── */
+section{padding:5rem 1.5rem;}
+.container{max-width:1100px;margin:0 auto;}
+.center-title{text-align:center;margin-bottom:3rem;}
+.section-label{font-size:0.78rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--orange);margin-bottom:.5rem;}
+.section-title{font-family:'Playfair Display',serif;font-size:clamp(1.8rem,4vw,2.8rem);line-height:1.2;margin-bottom:.8rem;}
+.section-desc{color:var(--gray);font-size:1.05rem;max-width:560px;margin:0 auto;}
+
+/* ── MARKETING SHOWCASE GALLERIES ── */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+.showcase-card {
+  background: var(--white);
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform 0.3s ease;
+}
+.showcase-card:hover {
+  transform: translateY(-5px);
+}
+.showcase-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+.showcase-body {
+  padding: 1.5rem;
+}
+.showcase-body h3 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--green-dark);
+}
+.showcase-body p {
+  font-size: 0.92rem;
+  color: var(--gray);
+}
+
+/* ── SERVICES INTERACTIVE SELECTION ── */
+.services-bg{background:var(--white);}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1.5rem;margin-top:3rem;}
+.service-card{background:var(--cream);border:1.5px solid var(--border);border-radius:16px;padding:2rem 1.6rem;transition:.25s;position:relative;overflow:hidden;cursor:pointer;}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:4px;background:var(--orange);transform:scaleX(0);transform-origin:left;transition:.3s;}
+.service-card:hover{border-color:var(--orange);box-shadow:var(--shadow);transform:translateY(-3px);}
+.service-card:hover::before{transform:scaleX(1);}
+.service-icon{width:56px;height:56px;background:var(--orange-light);border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:1.2rem;}
+.service-card h3{font-size:1.1rem;font-weight:700;margin-bottom:.5rem;}
+.service-card p{color:var(--gray);font-size:0.92rem;line-height:1.6;}
+
+/* ── HOW IT WORKS ── */
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:2rem;margin-top:3rem;}
+.step{text-align:center;}
+.step-num{width:52px;height:52px;background:var(--green);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;font-weight:800;margin:0 auto 1rem;}
+.step h3{font-size:1rem;font-weight:700;margin-bottom:.4rem;}
+.step p{color:var(--gray);font-size:0.9rem;}
+
+/* ── CALCULATOR ── */
+.calc-bg{background:var(--green-dark);color:#fff;}
+.calc-bg .section-label{color:#FAC75A;}
+.calc-bg .section-title{color:#fff;}
+.calc-bg .section-desc{color:#AADBB0;}
+.calc-box{background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);border-radius:20px;padding:2rem;margin-top:2.5rem;}
+.calc-row{display:flex;align-items:center;gap:1rem;margin-bottom:1rem;flex-wrap:wrap;}
+.calc-row label{color:#C8F0CB;font-weight:700;min-width:180px;}
+.calc-input{flex:1;min-width:120px;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.25);border-radius:10px;padding:10px 14px;color:#fff;font-family:'Nunito',sans-serif;font-size:1rem;}
+.calc-input:focus{outline:none;border-color:#FAC75A;}
+.calc-results{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:1rem;margin-top:2rem;}
+.calc-result-item{background:rgba(255,255,255,0.1);border-radius:12px;padding:1.2rem;text-align:center;}
+.calc-result-item .val{font-size:2rem;font-weight:800;color:#FAC75A;}
+.calc-result-item .lbl{color:#AADBB0;font-size:0.82rem;font-weight:600;margin-top:2px;}
+
+/* ── BOOKING FORM ── */
+.booking-bg{background:var(--white);}
+.booking-inner{display:grid;grid-template-columns:1fr 1.6fr;gap:3rem;align-items:start;margin-top:3rem;}
+.booking-info{background:var(--green);border-radius:20px;padding:2.2rem;color:#fff;}
+.booking-info h3{font-family:'Playfair Display',serif;font-size:1.5rem;margin-bottom:1rem;}
+.booking-info ul{list-style:none;display:flex;flex-direction:column;gap:.9rem;}
+.booking-info ul li{display:flex;gap:.8rem;align-items:flex-start;font-size:0.93rem;color:#C8F0CB;}
+.booking-info ul li strong{color:#fff;}
+.info-icon{font-size:1.2rem;flex-shrink:0;margin-top:2px;}
+.mpesa-box{background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.2);border-radius:12px;padding:1.2rem;margin-top:1.5rem;}
+.mpesa-box h4{color:#FAC75A;font-size:.95rem;margin-bottom:.5rem;}
+.mpesa-box p{color:#AADBB0;font-size:.85rem;}
+.mpesa-number{color:#fff;font-size:1.4rem;font-weight:800;letter-spacing:.04em;margin:.3rem 0;}
+form{display:flex;flex-direction:column;gap:1.2rem;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+.form-group{display:flex;flex-direction:column;gap:.4rem;}
+.form-group label{font-weight:700;font-size:.9rem;color:var(--green-dark);}
+.form-group input,
+.form-group select,
+.form-group textarea{border:1.5px solid var(--border);border-radius:10px;padding:11px 14px;font-family:'Nunito',sans-serif;font-size:.97rem;color:var(--brown);background:#FAFAF8;transition:.2s;}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{outline:none;border-color:var(--green);background:#fff;}
+.form-group textarea{resize:vertical;min-height:90px;}
+.form-group select{cursor:pointer;}
+.services-check{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:.6rem;}
+.check-item{display:flex;align-items:center;gap:.6rem;font-size:.9rem;cursor:pointer;padding:8px 12px;border:1.5px solid var(--border);border-radius:10px;transition:.2s;user-select:none;}
+.check-item:hover{border-color:var(--orange);background:var(--orange-light);}
+.check-item input[type=checkbox]{accent-color:var(--green);width:16px;height:16px;cursor:pointer;}
+.check-item.checked{border-color:var(--green);background:var(--green-light);font-weight:700;}
+.calc-preview{background:var(--orange-light);border:1.5px solid var(--border);border-radius:14px;padding:1.2rem 1.5rem;margin-top:.5rem;}
+.calc-preview h4{font-size:.88rem;font-weight:700;color:var(--orange-dark);margin-bottom:.7rem;}
+.calc-preview-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(110px,1fr));gap:.6rem;}
+.calc-item{text-align:center;}
+.calc-item .cv{font-size:1.3rem;font-weight:800;color:var(--green);}
+.calc-item .cl{font-size:.75rem;color:var(--gray);}
+
+/* ENHANCED INTERACTIVE BUTTON STYLING */
+.submit-btn{background:var(--green);color:#fff;border:none;border-radius:14px;padding:18px;font-family:'Nunito',sans-serif;font-size:1.05rem;font-weight:800;cursor:pointer;transition:all 0.3s cubic-bezier(0.4, 0, 0.2, 1);display:flex;align-items:center;justify-content:center;gap:.7rem;box-shadow: 0 4px 14px rgba(29, 92, 40, 0.25);}
+.submit-btn:hover{background:var(--green-dark);transform:translateY(-3px);box-shadow: 0 8px 22px rgba(15, 53, 22, 0.45);}
+.submit-btn svg{width:22px;height:22px;transition: transform 0.3s ease;}
+.submit-btn:hover svg {transform: scale(1.15) rotate(-5deg);}
+
+.required{color:var(--orange);}
+.form-note{font-size:.82rem;color:var(--gray);background:#F5F5F0;border-radius:8px;padding:.8rem 1rem;border-left:3px solid var(--orange);}
+
+/* ── LOCATION ── */
+.location-bg{background:var(--green-light);}
+.location-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:1.5rem;margin-top:2.5rem;}
+.location-card{background:#fff;border:1.5px solid var(--border);border-radius:16px;padding:1.8rem;text-align:center;}
+.location-card .loc-icon{font-size:2.5rem;margin-bottom:.8rem;}
+.location-card h3{font-weight:700;margin-bottom:.5rem;color:var(--green-dark);}
+.location-card p{color:var(--gray);font-size:.9rem;}
+.location-tag{display:inline-block;background:var(--green-light);color:var(--green-dark);border-radius:20px;padding:3px 12px;font-size:.78rem;font-weight:700;margin-top:.6rem;}
+
+/* ── FAQ ── */
+.faq-list{display:flex;flex-direction:column;gap:1rem;margin-top:2.5rem;max-width:760px;}
+.faq-item{background:#fff;border:1.5px solid var(--border);border-radius:14px;overflow:hidden;}
+.faq-q{padding:1.1rem 1.4rem;font-weight:700;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:1rem;color:var(--brown);}
+.faq-q:hover{background:var(--orange-light);}
+.faq-arrow{font-size:1.2rem;color:var(--orange);transition:.25s;flex-shrink:0;}
+.faq-item.open .faq-arrow{transform:rotate(180deg);}
+.faq-a{display:none;padding:0 1.4rem 1.1rem;color:var(--gray);font-size:.93rem;line-height:1.7;}
+.faq-item.open .faq-a{display:block;}
+
+/* ── CONTACT ── */
+.contact-bg{background:var(--white);}
+.contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.5rem;margin-top:2.5rem;}
+.contact-card{text-align:center;padding:2rem 1.5rem;background:var(--cream);border:1.5px solid var(--border);border-radius:16px;}
+.contact-card .ci{font-size:2.2rem;margin-bottom:.8rem;}
+.contact-card h4{font-weight:700;margin-bottom:.3rem;}
+.contact-card p, .contact-card a{color:var(--gray);font-size:.93rem;}
+.contact-card a:hover{color:var(--green);}
+
+/* ── FOOTER ── */
+footer{background:var(--green-dark);color:#C8F0CB;padding:2.5rem 1.5rem;text-align:center;}
+footer .footer-logo{font-family:'Playfair Display',serif;color:#fff;font-size:1.4rem;margin-bottom:.5rem;}
+footer p{font-size:.85rem;color:#7ABF82;}
+footer .footer-links{display:flex;gap:1.5rem;justify-content:center;margin:.8rem 0;flex-wrap:wrap;}
+footer .footer-links a{color:#AADBB0;font-size:.85rem;font-weight:600;}
+footer .footer-links a:hover{color:#fff;}
+
+/* ── SUCCESS OVERLAY ── */
+.success-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.65);z-index:999;align-items:center;justify-content:center;}
+.success-overlay.show{display:flex;}
+.success-box{background:#fff;border-radius:20px;padding:3rem 2.5rem;text-align:center;max-width:440px;width:90%;animation:popIn .35s ease;}
+@keyframes popIn{from{transform:scale(.8);opacity:0;}to{transform:scale(1);opacity:1;}}
+.success-box .tick{font-size:4rem;margin-bottom:1rem;}
+.success-box h2{font-family:'Playfair Display',serif;color:var(--green);margin-bottom:.6rem;}
+.success-box p{color:var(--gray);font-size:.95rem;margin-bottom:1.5rem;}
+.success-box button{background:var(--green);color:#fff;border:none;border-radius:10px;padding:12px 30px;font-family:'Nunito',sans-serif;font-size:1rem;font-weight:700;cursor:pointer;}
+
+/* ── RESPONSIVE ── */
+@media(max-width:768px){
+  .nav-links,.nav-cta{display:none;}
+  .hamburger{display:flex;}
+  .booking-inner{grid-template-columns:1fr;}
+  .form-row{grid-template-columns:1fr;}
+  .hero{min-height:70vh;}
+}
+.mobile-menu{display:none;background:var(--green-dark);padding:1rem 1.5rem;flex-direction:column;gap:.8rem;}
+.mobile-menu.open{display:flex;}
+.mobile-menu a{color:#C8F0CB;font-weight:600;padding:.4rem 0;border-bottom:1px solid rgba(255,255,255,.1);}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner">
+    <div class="brand-logo" onclick="window.scrollTo({top:0,behavior:'smooth'})" style="cursor:pointer;">
+      <div class="logo-emblem">
+        <div class="emblem-roof"></div>
+        <div class="emblem-house">
+          <div class="emblem-window"></div>
+        </div>
+      </div>
+      <div class="logo-text-area">
+        <span class="brand-title">Evamax Catering</span>
+        <span class="brand-subtitle">Premium Dining Logistics</span>
+      </div>
+    </div>
+    <ul class="nav-links">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#how">How It Works</a></li>
+      <li><a href="#location">Areas</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
+    <a href="#book" class="nav-cta">Book Now</a>
+    <div class="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#services" onclick="toggleMenu()">Services</a>
+    <a href="#how" onclick="toggleMenu()">How It Works</a>
+    <a href="#location" onclick="toggleMenu()">Areas We Cover</a>
+    <a href="#faq" onclick="toggleMenu()">FAQ</a>
+    <a href="#book" onclick="toggleMenu()" style="color:#FAC75A;font-weight:800;">📅 Book Now</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div style="position:relative;z-index:1;">
+    <div class="hero-badge">🌍 Serving Igembe North & South, Meru</div>
+    <h1>Your Event Deserves<br><span>Exceptional Catering</span></h1>
+    <p class="hero-sub">Full-service catering for weddings, funerals, birthdays, church functions & all occasions. We bring food, equipment & joy to your event.</p>
+    <div class="hero-btns">
+      <a href="#book" class="btn-primary">📅 Make a Reservation</a>
+      <a href="#services" class="btn-outline">See Our Services</a>
+    </div>
+    <div class="hero-chips">
+      <span class="chip">🎂 Cakes</span>
+      <span class="chip">⛺ Tents</span>
+      <span class="chip">🍲 Cooking</span>
+      <span class="chip">🍽️ Plates & Cups</span>
+      <span class="chip">🔥 Food Warmers</span>
+      <span class="chip">🪑 Seats & Tables</span>
+    </div>
+  </div>
+  <div class="scroll-hint">Scroll down<span class="scroll-arrow"></span></div>
+</section>
+
+<section id="showcase" style="background: var(--cream);">
+  <div class="container">
+    <div class="center-title">
+      <p class="section-label">Evamax Standards</p>
+      <h2 class="section-title">Professional Quality Delivery</h2>
+      <p class="section-desc">Take a look at how we dress our venues and prepare meals to make operations flawless.</p>
+    </div>
+    
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <img class="showcase-img" src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=600" alt="Gourmet Buffet Catering Setup"/>
+        <div class="showcase-body">
+          <h3>Premium Hot Buffets</h3>
+          <p>Delightful local and international favorites prepared hot at the venue using professional chafing dishes and warmers.</p>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <img class="showcase-img" src="https://images.unsplash.com/photo-1478147427282-58a87a120781?q=80&w=600" alt="Elegant High Table Presentation Layout"/>
+        <div class="showcase-body">
+          <h3>High Table & VIP Setup</h3>
+          <p>Clean linen work, beautiful floral adjustments, and executive glassware arrangements built for special dignitaries.</p>
+        </div>
+      </div>
+      <div class="showcase-card">
+        <img class="showcase-img" src="https://images.unsplash.com/photo-1519167758481-83f550bb49b3?q=80&w=600" alt="Tent Infrastructure Layout Management"/>
+        <div class="showcase-body">
+          <h3>Tent & Structural Logistics</h3>
+          <p>Heavy duty, weather-resistant structural tents carefully configured along with neat seating grids for optimal space utility.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-bg" id="services">
+  <div class="container">
+    <div class="center-title">
+      <p class="section-label">What We Offer</p>
+      <h2 class="section-title">Everything Your Event Needs</h2>
+      <p class="section-desc">From a small family gathering to a big wedding — we handle it all so you enjoy your special day.</p>
+    </div>
+    <div class="services-grid">
+      <div class="service-card" onclick="selectServiceCard(0)">
+        <div class="service-icon">🎂</div>
+        <h3>Custom Cakes</h3>
+        <p>Beautiful, delicious cakes for weddings, birthdays, and all celebrations. Made fresh to your order.</p>
+      </div>
+      <div class="service-card" onclick="selectServiceCard(2)">
+        <div class="service-icon">⛺</div>
+        <h3>Tent Setup</h3>
+        <p>We set up and take down tents of all sizes — keep your guests comfortable whether rain or shine.</p>
+      </div>
+      <div class="service-card" onclick="selectServiceCard(1)">
+        <div class="service-icon">🍲</div>
+        <h3>Cooking at Your Event</h3>
+        <p>Our team comes to your location and cooks fresh, delicious food for all your guests on the day.</p>
+      </div>
+      <div class="service-card" onclick="selectServiceCard(3)">
+        <div class="service-icon">🍽️</div>
+        <h3>Plates & Cutlery</h3>
+        <p>Clean, quality plates, forks, knives and spoons provided for all guests. We count and deliver.</p>
+      </div>
+      <div class="service-card" onclick="selectServiceCard(4)">
+        <div class="service-icon">☕</div>
+        <h3>Cups & Glasses</h3>
+        <p>Tea cups, water glasses, and juice cups for every person at your event. We bring extras too.</p>
+      </div>
+      <div class="service-card" onclick="selectServiceCard(5)">
+        <div class="service-icon">🔥</div>
+        <h3>Food Warmers</h3>
+        <p>Professional food warmers and chafing dishes to keep food hot and fresh throughout your event.</p>
+      </div>
+      <div class="service-card" onclick="selectServiceCard(6)">
+        <div class="service-icon">🪑</div>
+        <h3>Chairs & Tables</h3>
+        <p>Comfortable seats and tables arranged neatly for every guest. We set up and clean up after.</p>
+      </div>
+      <div class="service-card" onclick="selectServiceCard(7)">
+        <div class="service-icon">🧺</div>
+        <h3>Serving Staff</h3>
+        <p>Our trained team will serve your guests professionally so the hosts can relax and celebrate.</p>
+      </div>
+      <div class="service-card" onclick="selectServiceCard(8)">
+        <div class="service-icon">🎀</div>
+        <h3>Decoration & Setup</h3>
+        <p>Table runners, flowers, and basic décor to make the venue look beautiful for your event.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="container">
+    <div class="center-title">
+      <p class="section-label">Simple & Easy</p>
+      <h2 class="section-title">How to Book Us</h2>
+      <p class="section-desc">No complicated steps. Just fill a simple form and we will handle the rest!</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Fill the Form Below</h3>
+        <p>Enter your name, ID number, event date, location, and number of people.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Pick Your Services</h3>
+        <p>Choose what you need — cooking, tents, chairs, cakes, warmers and more.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Send via WhatsApp</h3>
+        <p>Your booking details go straight to us on WhatsApp. We reply fast to confirm.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Pay Deposit via M-Pesa</h3>
+        <p>Send a small deposit to hold your date. Balance is paid on the day of the event.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">5</div>
+        <h3>We Show Up & Serve!</h3>
+        <p>Relax — our team arrives on time, sets up everything, and serves your guests.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="calc-bg">
+  <div class="container">
+    <div class="center-title">
+      <p class="section-label">Smart Planning</p>
+      <h2 class="section-title">Equipment Calculator</h2>
+      <p class="section-desc">Enter the number of guests and we will tell you how much of everything is needed.</p>
+    </div>
+    <div class="calc-box">
+      <div class="calc-row">
+        <label>Number of Guests</label>
+        <input type="number" class="calc-input" id="quickGuests" min="1" placeholder="e.g. 200" oninput="updateCalc(this.value,'quick')"/>
+      </div>
+      <div class="calc-results" id="quickResults">
+        <div class="calc-result-item"><div class="val" id="qPlates">—</div><div class="lbl">Plates</div></div>
+        <div class="calc-result-item"><div class="val" id="qCups">—</div><div class="lbl">Cups</div></div>
+        <div class="calc-result-item"><div class="val" id="qSeats">—</div><div class="lbl">Seats</div></div>
+        <div class="calc-result-item"><div class="val" id="qTables">—</div><div class="lbl">Tables</div></div>
+        <div class="calc-result-item"><div class="val" id="qWarmers">—</div><div class="lbl">Warmers</div></div>
+        <div class="calc-result-item"><div class="val" id="qSpoons">—</div><div class="lbl">Spoons</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="booking-bg" id="book">
+  <div class="container">
+    <div class="center-title">
+      <p class="section-label">Book with Us</p>
+      <h2 class="section-title">Make Your Reservation</h2>
+      <p class="section-desc">Fill in your details below and we will send everything to our WhatsApp for you. No account needed!</p>
+    </div>
+
+    <div class="booking-inner">
+      <div class="booking-info">
+        <h3>Why Choose Evamax? 🌟</h3>
+        <ul>
+          <li><span class="info-icon">✅</span><div><strong>Trusted locally</strong><br>Serving Igembe families for years. We know your community.</div></li>
+          <li><span class="info-icon">📞</span><div><strong>Fast response</strong><br>We confirm your booking within hours on WhatsApp.</div></li>
+          <li><span class="info-icon">🔥</span><div><strong>Fresh food only</strong><br>Everything cooked fresh on the day of your event.</div></li>
+          <li><span class="info-icon">🪑</span><div><strong>Full setup & cleanup</strong><br>We arrive early, set up, serve, and clean up after.</div></li>
+          <li><span class="info-icon">💰</span><div><strong>Fair, honest prices</strong><br>No hidden charges. We discuss pricing openly.</div></li>
+          <li><span class="info-icon">🛡️</span><div><strong>Your info is safe</strong><br>Details only shared with our catering team via WhatsApp.</div></li>
+        </ul>
+        <div class="mpesa-box">
+          <h4>💚 Deposit via M-Pesa</h4>
+          <div class="mpesa-number">0720 947 574</div>
+          <p>Send deposit to this number. Use your name as the reference. We will confirm once received.</p>
+        </div>
+      </div>
+
+      <form id="bookingForm" onsubmit="submitBooking(event)">
+        <p class="form-note">Fields marked <span class="required">*</span> are required. No account or login needed!</p>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="fname">Full Name <span class="required">*</span></label>
+            <input type="text" id="fname" placeholder="e.g. Grace Mwenda" required/>
+          </div>
+          <div class="form-group">
+            <label for="idnum">ID Number <span class="required">*</span></label>
+            <input type="text" id="idnum" placeholder="e.g. 12345678" required maxlength="10"/>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="phone">Phone Number <span class="required">*</span></label>
+            <input type="tel" id="phone" placeholder="e.g. 0712 345 678" required/>
+          </div>
+          <div class="form-group">
+            <label for="altphone">Alternative Phone</label>
+            <input type="tel" id="altphone" placeholder="e.g. 0700 000 000"/>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eventdate">Event Date <span class="required">*</span></label>
+            <input type="date" id="eventdate" required/>
+          </div>
+          <div class="form-group">
+            <label for="eventtime">Start Time <span class="required">*</span></label>
+            <input type="time" id="eventtime" required/>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="eventtype">Type of Event <span class="required">*</span></label>
+            <select id="eventtype" required>
+              <option value="">-- Select Event Type --</option>
+              <option>Wedding (Arusi)</option>
+              <option>Funeral (Mazishi)</option>
+              <option>Birthday Party</option>
+              <option>Church Function</option>
+              <option>School Event</option>
+              <option>Graduation Party</option>
+              <option>Introduction Ceremony</option>
+              <option>Corporate Meeting</option>
+              <option>Family Gathering</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="location">Event Location / Area <span class="required">*</span></label>
+            <select id="location" required>
+              <option value="">-- Select Area --</option>
+              <optgroup label="Igembe North">
+                <option>Ntunene – Igembe North</option>
+                <option>Antuambui – Igembe North</option>
+                <option>Athiru Gaiti – Igembe North</option>
+                <option>Athiru Ruujine – Igembe North</option>
+                <option>Akithi – Igembe North</option>
+                <option>Other – Igembe North</option>
+              </optgroup>
+              <optgroup label="Igembe South">
+                <option>Maua – Igembe South</option>
+                <option>Igembe East – Igembe South</option>
+                <option>Kanuni – Igembe South</option>
+                <option>Other – Igembe South</option>
+              </optgroup>
+              <optgroup label="Other Meru Areas">
+                <option>Meru Town</option>
+                <option>Other Meru Area</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="address">Specific Venue / Address</label>
+          <input type="text" id="address" placeholder="e.g. Behind Maua Market, near St. Peter's Church"/>
+        </div>
+
+        <div class="form-group">
+          <label for="guests">Number of Guests <span class="required">*</span></label>
+          <input type="number" id="guests" min="10" max="5000" placeholder="e.g. 150" required oninput="updateFormCalc()"/>
+        </div>
+
+        <div class="calc-preview" id="equipPreview" style="display:none;">
+          <h4>📦 Equipment We Will Prepare for Your Event</h4>
+          <div class="calc-preview-grid">
+            <div class="calc-item"><div class="cv" id="fPlates">—</div><div class="cl">Plates</div></div>
+            <div class="calc-item"><div class="cv" id="fCups">—</div><div class="cl">Cups</div></div>
+            <div class="calc-item"><div class="cv" id="fSeats">—</div><div class="cl">Seats</div></div>
+            <div class="calc-item"><div class="cv" id="fTables">—</div><div class="cl">Tables</div></div>
+            <div class="calc-item"><div class="cv" id="fWarmers">—</div><div class="cl">Warmers</div></div>
+            <div class="calc-item"><div class="cv" id="fSpoons">—</div><div class="cl">Spoons</div></div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Services Needed <span class="required">*</span></label>
+          <div class="services-check">
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="services" value="🍲 Cooking at Event"/>🍲 Cooking at Event
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="services" value="🎂 Custom Cake"/>🎂 Custom Cake
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="services" value="⛺ Tent Setup"/>⛺ Tent Setup
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="services" value="🍽️ Plates & Cutlery"/>🍽️ Plates & Cutlery
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="services" value="☕ Cups & Glasses"/>☕ Cups & Glasses
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="services" value="🔥 Food Warmers"/>🔥 Food Warmers
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="services" value="🪑 Chairs & Tables"/>🪑 Chairs & Tables
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="services" value="🧺 Serving Staff"/>🧺 Serving Staff
+            </label>
+            <label class="check-item" onclick="toggleCheck(this)">
+              <input type="checkbox" name="services" value="🎀 Decoration Setup"/>🎀 Decoration Setup
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="deposit">Deposit Amount (KES) <span class="required">*</span></label>
+          <input type="number" id="deposit" min="500" placeholder="Minimum KES 500 to hold your date" required/>
+        </div>
+
+        <div class="form-group">
+          <label for="mpesacode">M-Pesa Transaction Code</label>
+          <input type="text" id="mpesacode" placeholder="e.g. QJK8XXXXXXX (after sending deposit)" maxlength="12"/>
+        </div>
+
+        <div class="form-group">
+          <label for="notes">Special Requests or Notes</label>
+          <textarea id="notes" placeholder="e.g. We want beef and chicken. The venue has no electricity, please bring generator. Menu ideas welcome!"></textarea>
+        </div>
+
+        <button type="submit" class="submit-btn">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1zm0 0a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></svg>
+          Send Reservation to Our WhatsApp 📲
+        </button>
+        <p style="text-align:center;font-size:.82rem;color:var(--gray);margin-top:.5rem;">Your details will open WhatsApp with a ready message. Just tap <strong>Send!</strong></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<section class="location-bg" id="location">
+  <div class="container">
+    <div class="center-title">
+      <p class="section-label">Where We Serve</p>
+      <h2 class="section-title">Areas We Cover</h2>
+      <p class="section-desc">Based in Meru County — we travel to your location. Currently serving these areas:</p>
+    </div>
+    <div class="location-grid">
+      <div class="location-card">
+        <div class="loc-icon">📍</div>
+        <h3>Igembe North</h3>
+        <p>Ntunene, Antuambui, Athiru Gaiti, Athiru Ruujine, Akithi and surrounding areas.</p>
+        <span class="location-tag">✅ Fully Covered</span>
+      </div>
+      <div class="location-card">
+        <div class="loc-icon">📍</div>
+        <h3>Igembe South</h3>
+        <p>Maua Town, Igembe East, Kanuni and surrounding villages.</p>
+        <span class="location-tag">✅ Fully Covered</span>
+      </div>
+      <div class="location-card">
+        <div class="loc-icon">📍</div>
+        <h3>Other Meru Areas</h3>
+        <p>We may be able to serve other Meru areas. Call us to confirm availability.</p>
+        <span class="location-tag">📞 Call to Confirm</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="faq">
+  <div class="container">
+    <div class="center-title">
+      <p class="section-label">Questions & Answers</p>
+      <h2 class="section-title">Frequently Asked Questions</h2>
+      <p class="section-desc">Here are answers to common questions. Still have a question? Just WhatsApp us!</p>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How early should I book? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We recommend booking at least 2 weeks before your event. For large events like weddings, 1–2 months is better so we can plan fully. We also take last-minute bookings if we are available — just call us!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What is the deposit amount? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">The deposit is flexible depending on the size of your event, but we require a minimum of KES 500 to hold your booking date. The remaining balance is paid on or before the day of the event. We discuss this openly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you cook the food or do I bring my own? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We offer full cooking services — our team comes to your venue and cooks fresh food for all your guests. You can tell us what menu you prefer (beef, chicken, rice, ugali, etc.) and we will plan accordingly. We can also just bring equipment if you prefer to cook yourself.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">How do you calculate plates, cups and chairs? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We prepare based on the number of guests you tell us, plus a 10–15% extra buffer to make sure no one is left out. For food warmers, we bring 1 warmer per 30–40 people. We are experienced at this and will make sure everyone is served properly.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What types of events do you cater for? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We cater for weddings (arusi), funerals (mazishi), birthdays, church functions, school events, graduations, introduction ceremonies, corporate meetings, and family gatherings. Any occasion where food and good service is needed — we are there!</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Can I see the menu or suggest what food I want? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Absolutely! After you send your reservation on WhatsApp, we will discuss the full menu with you. You can choose local favourites like pilau, chapati, rice, ugali, nyama choma, chicken stew, vegetables, tea, juice and more. We cook to your preferences.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">Do you travel far from Maua or Ntunene? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">We primarily serve Igembe North and Igembe South. For areas outside this, we may be able to help but a transport fee may apply. Just contact us and we will let you know if we can reach your area.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">What if I need to cancel or change my booking date? <span class="faq-arrow">▼</span></div>
+        <div class="faq-a">Life happens! Please contact us as soon as possible if you need to cancel or reschedule. We will do our best to accommodate you. Deposits may be held to rebook on a new date. Cancellations very close to the event date may not be refundable.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-bg" id="contact">
+  <div class="container">
+    <div class="center-title">
+      <p class="section-label">Reach Us</p>
+      <h2 class="section-title">Contact Evamax Catering</h2>
+      <p class="section-desc">We are happy to answer any questions. WhatsApp is the fastest way to reach us!</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-card">
+        <div class="ci">📱</div>
+        <h4>WhatsApp Us</h4>
+        <a href="https://wa.me/254720947574" target="_blank" style="color:var(--green);font-weight:700;font-size:1.05rem;">0720 947 574</a>
+        <p style="margin-top:.3rem;">Tap to open WhatsApp chat</p>
+      </div>
+      <div class="contact-card">
+        <div class="ci">📞</div>
+        <h4>Call Us</h4>
+        <a href="tel:+254720947574" style="color:var(--green);font-weight:700;font-size:1.05rem;">0720 947 574</a>
+        <p style="margin-top:.3rem;">Mon – Sat, 7am – 8pm</p>
+      </div>
+      <div class="contact-card">
+        <div class="ci">📍</div>
+        <h4>We Are Based In</h4>
+        <p><strong>Meru County, Kenya</strong></p>
+        <p>Igembe North & South</p>
+      </div>
+      <div class="contact-card">
+        <div class="ci">💚</div>
+        <h4>M-Pesa Deposit To</h4>
+        <p><strong style="font-size:1.1rem;">0720 947 574</strong></p>
+        <p>Evamax Catering Services</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-logo">🍽️ Evamax Catering Services</div>
+  <p>Serving Igembe North & South, Meru County, Kenya</p>
+  <div class="footer-links">
+    <a href="#services">Services</a>
+    <a href="#book">Book Now</a>
+    <a href="#location">Areas</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://wa.me/254720947574" target="_blank">WhatsApp Us</a>
+  </div>
+  <p>© 2026 Evamax Catering Services. All rights reserved.</p>
+</footer>
+
+<div class="success-overlay" id="successOverlay">
+  <div class="success-box">
+    <div class="tick">🎉</div>
+    <h2>WhatsApp is Ready!</h2>
+    <p>Your reservation details have been prepared. WhatsApp has opened — just press <strong>Send</strong> and we will confirm your booking shortly!</p>
+    <p style="margin-bottom:1.5rem;font-size:.85rem;color:#999;">If WhatsApp did not open, check that you have it installed or use the button below.</p>
+    <button onclick="document.getElementById('successOverlay').classList.remove('show')">Close</button>
+  </div>
+</div>
+
+<script>
+function toggleMenu(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+
+function toggleCheck(label){
+  label.classList.toggle('checked');
+}
+
+// Interactive Connection: Clicking service grids automatically highlights and checks form boxes
+function selectServiceCard(index) {
+  const checkItems = document.querySelectorAll('.check-item');
+  if(checkItems[index]) {
+    const checkbox = checkItems[index].querySelector('input[type="checkbox"]');
+    checkbox.checked = !checkbox.checked;
+    checkItems[index].classList.toggle('checked');
+    
+    // Smoothly scroll the customer down to the booking form if they select options
+    document.getElementById('book').scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+function toggleFaq(el){
+  const item=el.closest('.faq-item');
+  item.classList.toggle('open');
+}
+
+function calcEquipment(n){
+  if(!n||n<1) return null;
+  const extra=Math.ceil(n*0.12);
+  return {
+    plates: n+extra,
+    cups: n+extra,
+    seats: n,
+    tables: Math.ceil(n/8),
+    warmers: Math.ceil(n/35),
+    spoons: n+extra
+  };
+}
+
+function updateCalc(val,prefix){
+  const n=parseInt(val);
+  const r=calcEquipment(n);
+  if(!r){
+    ['Plates','Cups','Seats','Tables','Warmers','Spoons'].forEach(x=>{
+      const el=document.getElementById('q'+x); if(el) el.textContent='—';
+    });
+    return;
+  }
+  document.getElementById('qPlates').textContent=r.plates;
+  document.getElementById('qCups').textContent=r.cups;
+  document.getElementById('qSeats').textContent=r.seats;
+  document.getElementById('qTables').textContent=r.tables;
+  document.getElementById('qWarmers').textContent=r.warmers;
+  document.getElementById('qSpoons').textContent=r.spoons;
+}
+
+function updateFormCalc(){
+  const n=parseInt(document.getElementById('guests').value);
+  const r=calcEquipment(n);
+  const preview=document.getElementById('equipPreview');
+  if(!r){preview.style.display='none';return;}
+  preview.style.display='block';
+  document.getElementById('fPlates').textContent=r.plates;
+  document.getElementById('fCups').textContent=r.cups;
+  document.getElementById('fSeats').textContent=r.seats;
+  document.getElementById('fTables').textContent=r.tables;
+  document.getElementById('fWarmers').textContent=r.warmers;
+  document.getElementById('fSpoons').textContent=r.spoons;
+}
+
+function submitBooking(e){
+  e.preventDefault();
+  const f=id=>document.getElementById(id).value.trim();
+  const name=f('fname'), idnum=f('idnum'), phone=f('phone'), altphone=f('altphone');
+  const date=f('eventdate'), time=f('eventtime'), type=f('eventtype');
+  const loc=f('location'), address=f('address'), guests=f('guests');
+  const deposit=f('deposit'), mpesa=f('mpesacode'), notes=f('notes');
+
+  const checked=[...document.querySelectorAll('input[name=services]:checked')].map(x=>x.value);
+  if(!checked.length){alert('Please select at least one service needed.');return;}
+
+  const r=calcEquipment(parseInt(guests));
+  const equip=r?`\n📦 EQUIPMENT TO PREPARE:\n• Plates: ${r.plates}\n• Cups: ${r.cups}\n• Seats: ${r.seats}\n• Tables: ${r.tables}\n• Food Warmers: ${r.warmers}\n• Spoons: ${r.spoons}`:'';
+
+  const formatDate=d=>{if(!d)return d;const[y,m,day]=d.split('-');const months=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];return `${day} ${months[parseInt(m)-1]} ${y}`;};
+  const formatTime=t=>{if(!t)return t;const[h,m]=t.split(':');const ampm=h>=12?'PM':'AM';return `${h%12||12}:${m} ${ampm}`;};
+
+  const msg=`🍽️ *NEW RESERVATION – EVAMAX CATERING SERVICES*\n\n`+
+    `👤 *CUSTOMER DETAILS:*\n• Name: ${name}\n• ID Number: ${idnum}\n• Phone: ${phone}${altphone?'\n• Alt Phone: '+altphone:''}\n\n`+
+    `📅 *EVENT DETAILS:*\n• Event Type: ${type}\n• Date: ${formatDate(date)}\n• Time: ${formatTime(time)}\n• Location: ${loc}${address?'\n• Venue/Address: '+address:''}\n• Number of Guests: ${guests} people\n`+
+    equip+
+    `\n\n✅ *SERVICES REQUESTED:*\n${checked.map(s=>'• '+s).join('\n')}\n\n`+
+    `💰 *DEPOSIT:*\n• Amount: KES ${parseInt(deposit).toLocaleString()}\n• M-Pesa Code: ${mpesa||'Not yet sent – to be sent shortly'}\n\n`+
+    (notes?`📝 *SPECIAL NOTES:*\n${notes}\n\n`:'')+
+    `⏰ Reservation sent: ${new Date().toLocaleString('en-KE',{timeZone:'Africa/Nairobi'})}\n\nKindly confirm my booking. Thank you! 🙏`;
+
+  const waUrl=`https://wa.me/254720947574?text=${encodeURIComponent(msg)}`;
+  window.open(waUrl,'_blank');
+  document.getElementById('successOverlay').classList.add('show');
+}
+</script>
+</body>
+</html>
